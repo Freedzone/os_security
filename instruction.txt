@@ -1,0 +1,6 @@
+/* Disable ASLR */
+echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+
+/* Disable stack protector for compiler
+(if you are using ret libc that there is no need for it)*/
+-fno-stack-protector -z execstack
